@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+
+<body class="wh-100 bg-light">
+
+    <div class="navbar-wrapper">
+        <nav class="navbar navbar-dark bg-primary">
+            <h1 class="text-light p-2"> Landbook </h1>
+        </nav>
+    </div>
+    <main class="d-flex h-100 bg-light w-100 h-100">
+        <aside style="width: 200px;" class="bg-white h-100">
+            <ul class="nav flex-column">
+                <a href="#" class="nav-item d-flex gap-2 flex-column align-items-center p-3 fs-5 text-decoration-none ">
+                    <i class="fa-sharp fa-solid fa-box-open"></i>
+                    Products
+                </a>
+                <a href="#" class="nav-item d-flex gap-2 flex-column align-items-center p-3 fs-5 text-decoration-none">
+
+                    Sales
+                </a>
+                <a href="#" class="nav-item d-flex gap-2 flex-column align-items-center p-3 fs-5 text-decoration-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-columns-gap" viewBox="0 0 16 16">
+                        <path
+                            d="M6 1v3H1V1h5zM1 0a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1H1zm14 12v3h-5v-3h5zm-5-1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5zM6 8v7H1V8h5zM1 7a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1H1zm14-6v7h-5V1h5zm-5-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1h-5z" />
+                    </svg>
+                    Dashboard
+                </a>
+            </ul>
+        </aside>
+        <div class="w-100">
+            <div class="title_up d-flex align-items-center justify-content-between">
+                <h1 class="p-5">Products</h1>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Add product
+                </button>
+
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Add product</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                               <input type="text" placeholder="Product name" class="form-control"> <br>
+                               <input type="text" placeholder="Price" class="form-control"> <br>
+                               <input type="text" placeholder="Count" class="form-control"> <br>
+                               <input type="text" placeholder="Desk" class="form-control"> <br> 
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{#each product}}
+            <div class="card p-3" style="width: 400px; margin: 0 0 0 50px;">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <h1>#1 Coca Cola</h1>
+                            <a href="/delete?id={{id}}" class="btn btn-danger">X</a>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>12,000 so'm</td>
+                            <td>Drink for you</td>
+                            <td>Last count: 13</td>
+                        </tr>
+                    </tbody>
+                </table>        
+            </div>
+            {{/each}}
+        </div>
+    </main>
+    {{{body}}}
+</body>
+
+</html>
